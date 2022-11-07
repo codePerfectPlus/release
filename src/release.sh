@@ -21,13 +21,10 @@ check_file() {
     fi
 }
 
+echo "[[pypi]]\nusername = __token__\npassword = $PYPI_TOKEN" > ~/.pypirc
+
 check_command twine
 check_file setup.py
 python3 setup.py sdist bdist_wheel
 check_directory dist
 python3 -m twine upload --repository testpypi dist/*
-
-rm -rf dist
-rm -rf build
-rm -rf *.egg-info
-find . -name "*.pyc" -exec rm -rf {}\;

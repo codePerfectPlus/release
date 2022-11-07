@@ -5,7 +5,8 @@ inputs:
     required: true
     description: API token for your PyPI project
   verbose:
-    default:
-      false
-    required:
-      false
+    default: false
+    required: false
+runs: 
+  using: docker
+  image: Dockerfile
