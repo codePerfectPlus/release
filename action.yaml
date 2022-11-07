@@ -1,0 +1,11 @@
+name: PyPI release action
+description: Automation github action to upload PyPI package
+inputs:
+  api_token:
+    required: true
+    description: API token for your PyPI project
+  verbose:
+    default:
+      false
+    required:
+      false
